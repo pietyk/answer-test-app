@@ -1,5 +1,5 @@
 class PollMail < ActionMailer::Base
-  default from: "no-reply@answer-test-app.herokuapp.com"
+  default from: "answertestapp@gmail.com"
   
   def send_score(user, score)
     @score = score
