@@ -1,0 +1,30 @@
+.container
+  .navbar-header
+    %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+      .sr-only
+        Menu
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.navbar-brand{:href => "/#{I18n.locale}"} Test Answer app
+  .collapse.navbar-collapse
+    %p.navbar-text.pull-right
+      - if user_signed_in?
+        = I18n.t('logged_in_as')
+        %a.navbar-link{:href => "#"}
+          = link_to(current_user.email, edit_user_registration_path)
+    %ul.nav.navbar-nav
+      %li.active
+      - if user_signed_in?
+        %li
+          = link_to(I18n.t('devise.logout'), destroy_user_session_path, :method=>'delete')
+      - else
+        %li
+          = link_to(I18n.t('devise.login'), new_user_session_path)
+      - unless user_signed_in?
+        %li
+          = link_to(I18n.t('devise.sign_up'), new_user_registration_path)
+      %li
+        = link_to('en', '/en/') if I18n.locale == :pl
+        = link_to('pl', '/pl/') if I18n.locale == :en
+

@@ -1,0 +1,20 @@
+%h2
+  = "#{I18n.t('devise.views.registrations.edit.title')}"
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :password, :autocomplete => "off", :hint => I18n.t('devise.views.registrations.edit.hint1'), :required => false
+    = f.input :password_confirmation, :required => false
+    = f.input :email, :required => true, :autofocus => true
+    = f.input :current_password, :hint => I18n.t('devise.views.registrations.edit.hint2'), :required => true
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %p
+        = "#{I18n.t('devise.views.registrations.edit.text')} #{resource.unconfirmed_email}"
+  .form-actions
+    = f.button :submit, I18n.t('devise.views.registrations.edit.button'), :class => 'btn-primary'
+%h3
+  = I18n.t('devise.views.registrations.edit.cancel')
+%p
+  = link_to I18n.t('devise.views.registrations.edit.cancel_link'), registration_path(resource_name), :data => { :confirm => I18n.t('devise.views.registrations.edit.cancel_confirm'), :method => :delete}
+= link_to I18n.t('devise.views.registrations.edit.back'), :back
+

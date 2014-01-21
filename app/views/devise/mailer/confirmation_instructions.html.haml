@@ -1,0 +1,6 @@
+%p
+  = "#{I18n.t('devise.views.mailer.confirmation.welcome')} #{@email}!"
+%p
+  = I18n.t('devise.views.mailer.confirmation.text')
+%p= link_to I18n.t('devise.views.mailer.confirmation.link'), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+

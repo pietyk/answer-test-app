@@ -1,0 +1,13 @@
+%h1
+  = @poll.name
+
+= simple_form_for(Question.new, :url => polls_path()) do |f|
+  = f.error_notification
+  - cache "poll_questions_#{@poll.id}" do
+    .form-inputs
+      = f.input :id, :as => :hidden, :input_html => { :value => @poll.id, :name => 'id' }
+      - @poll.questions.each do |question|
+        = f.association :answers, collection: question.answers, :as => :check_boxes, :label_method => :text, :label => question.text, :value_method => :id, :input_html => { :name => 'answers[]' }
+  .form-actions
+    = f.button :submit, I18n.t('send'), :class => 'btn-primary'
+

@@ -1,0 +1,13 @@
+%h1 
+  = I18n.t('score_test')
+
+- @score.each_with_index do |score, i|
+  %strong
+    = score[0]
+  - if score[1]
+    %span.text-success
+      = I18n.t('correct')
+  - else
+    %span.text-danger
+      = I18n.t('incorrect')
+  %br
