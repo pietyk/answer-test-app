@@ -5,8 +5,8 @@
   = f.input :reset_password_token, :as => :hidden
   = f.full_error :reset_password_token
   .form-inputs
-    = f.input :password, :label => "New password", :required => true, :autofocus => true
-    = f.input :password_confirmation, :label => "Confirm your new password", :required => true
+    = f.input :password, :label => "New password", :required => true, :autofocus => true, :input_html => { :class => 'form-control' }
+    = f.input :password_confirmation, :label => "Confirm your new password", :required => true, :input_html => { :class => 'form-control' }
   .form-actions
     = f.button :submit, I18n.t('devise.views.password.submit'), :class => 'btn-primary'
 = render "devise/shared/links"

@@ -5,4 +5,8 @@ class Question < ActiveRecord::Base
   validates :text, :presence => true
   
   attr_accessible :text
+  
+  def display_name
+    self.text
+  end
 end

@@ -9,6 +9,8 @@ class Poll < ActiveRecord::Base
   
   friendly_id :name, use: :slugged
   
+  human_name = 'Testy'
+  
   def generate_score(answers)
     score   = {}
     answers = answers.map(&:to_i)

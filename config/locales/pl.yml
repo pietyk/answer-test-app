@@ -234,4 +234,14 @@ pl:
   activerecord:
     errors:
       <<: *errors
+    models:
+      poll:
+        one: 'Test'
+        other: 'Testy'
+      question:
+        one: 'Pytanie'
+        other: 'Pytania'
+      answer:
+        one: 'Odpowiedź'
+        other: 'Odpowiedzi'
 

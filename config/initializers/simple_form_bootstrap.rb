@@ -1,25 +1,32 @@
-inputs = %w[
-  CollectionSelectInput
-  DateTimeInput
-  FileInput
-  GroupedCollectionSelectInput
-  NumericInput
-  PasswordInput
-  RangeInput
-  StringInput
-  TextInput
-]
- 
-inputs.each do |input_type|
-  superclass = "SimpleForm::Inputs::#{input_type}".constantize
- 
-  new_class = Class.new(superclass) do
-    def input_html_classes
-      super.push('form-control')
-    end
+class CollectionSelectInput < SimpleForm::Inputs::CollectionSelectInput
+  def input_html_classes
+    super.push('form-control')
   end
- 
-  Object.const_set(input_type, new_class)
+end
+class DateTimeInput < SimpleForm::Inputs::DateTimeInput
+  def input_html_classes
+    super.push('form-control')
+  end
+end
+class FileInput < SimpleForm::Inputs::FileInput
+  def input_html_classes
+    super.push('form-control')
+  end
+end
+class GroupedCollectionSelectInput < SimpleForm::Inputs::GroupedCollectionSelectInput
+  def input_html_classes
+    super.push('form-control')
+  end
+end
+class NumericInput < SimpleForm::Inputs::NumericInput
+  def input_html_classes
+    super.push('form-control')
+  end
+end
+class RangeInput < SimpleForm::Inputs::RangeInput
+  def input_html_classes
+    super.push('form-control')
+  end
 end
  
 # Use this setup block to configure all options available in SimpleForm.
