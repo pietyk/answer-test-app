@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
   belongs_to :poll
-  has_many :answers, :dependent => :delete_all
+  has_many :answers, :dependent => :destroy
   
   validates :text, :presence => true
   

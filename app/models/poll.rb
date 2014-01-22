@@ -1,7 +1,7 @@
 class Poll < ActiveRecord::Base
   extend FriendlyId
   
-  has_many :questions, :dependent => :delete_all
+  has_many :questions, :dependent => :destroy
 
   validates :name, :presence => true
   
