@@ -71,6 +71,11 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    factory_girl (4.3.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.3.0)
+      factory_girl (~> 4.3.0)
+      railties (>= 3.0.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     friendly_id (4.0.10.1)
@@ -208,6 +213,7 @@ DEPENDENCIES
   dalli
   devise (= 3.2.2)
   devise-i18n (= 0.10.2)
+  factory_girl_rails (~> 4.3.0)
   friendly_id (= 4.0.10.1)
   haml-rails
   jquery-ui-rails (= 4.1.1)
